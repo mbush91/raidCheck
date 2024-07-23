@@ -14,6 +14,10 @@ def main() :
     print(output)
     print("Command error:")
     print(error)
+
+    with open("/out/last.txt", 'w') as f :
+      f.write(output)
+
   except subprocess.CalledProcessError as e:
     print(f"Command failed with exit code {e.returncode}")
     print(f"Error output: {e.stderr}")
